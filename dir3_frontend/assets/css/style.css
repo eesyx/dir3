@@ -1,0 +1,316 @@
+  
+/* الألوان والمتغيرات العامة للموقع */
+:root {
+  --bg-0: #090c12;
+  --bg-1: #0e1219;
+  --bg-2: #151b26;
+  --primary: #00ff66;
+  --primary-glow: rgba(0, 255, 102, 0.15);
+  --text-main: #f0f4f8;
+  --text-muted: #8fa0b5;
+  --border-color: #222d3d;
+  --font-family: 'IBM Plex Sans Arabic', 'Tajawal', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-0);
+  color: var(--text-main);
+  font-family: var(--font-family);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* تنسيق القائمة العلوية */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 5%;
+  background-color: rgba(9, 12, 18, 0.85);
+  border-bottom: 1px solid var(--border-color);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  backdrop-filter: blur(8px);
+}
+
+.logo {
+  font-family: 'Tajawal', sans-serif;
+  font-weight: 900;
+  font-size: 1.8rem;
+  letter-spacing: 1px;
+}
+
+.nav-links a {
+  color: var(--text-main);
+  text-decoration: none;
+  margin-right: 2rem;
+  font-size: 0.95rem;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: var(--primary);
+}
+
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--text-main);
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* الأزرار والنصوص الملونة */
+.gradient-text {
+  background: linear-gradient(45deg, #00ff66, #00e5ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.8rem 2rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: var(--font-family);
+}
+
+.btn-primary {
+  background-color: var(--primary);
+  color: var(--bg-0);
+  border: 1px solid var(--primary);
+}
+
+.btn-primary:hover {
+  box-shadow: 0 0 15px var(--primary);
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--text-main);
+  border: 1px solid var(--border-color);
+  margin-right: 1rem;
+}
+
+.btn-secondary:hover {
+  border-color: var(--primary);
+  background-color: rgba(0, 255, 102, 0.02);
+}
+
+/* قسم الـ Hero */
+.hero {
+  padding: 8rem 5% 6rem 5%;
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.hero h1 {
+  font-size: 3.5rem;
+  font-weight: 900;
+  margin-bottom: 1.5rem;
+  line-height: 1.3;
+}
+
+.hero p {
+  color: var(--text-muted);
+  font-size: 1.2rem;
+  margin-bottom: 2.5rem;
+}
+
+/* قسم الخدمات */
+.services-section, .soc-section, .contact-section {
+  padding: 5rem 5%;
+  border-top: 1px solid var(--border-color);
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2.2rem;
+  font-weight: 800;
+  margin-bottom: 3rem;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.service-card {
+  background-color: var(--bg-1);
+  border: 1px solid var(--border-color);
+  padding: 2.5rem 2rem;
+  border-radius: 8px;
+  transition: transform 0.3s, border-color 0.3s;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--primary);
+}
+
+.service-card h3 {
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+}
+
+.service-card p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+/* محاكي الـ SOC (الترمينال) */
+.terminal-window {
+  background-color: var(--bg-1);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  max-width: 800px;
+  margin: 0 auto;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.terminal-header {
+  background-color: var(--bg-2);
+  padding: 0.75rem 1rem;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin-left: 6px;
+}
+
+.dot.red { background-color: #ff5f56; }
+.dot.yellow { background-color: #ffbd2e; }
+.dot.green { background-color: #27c93f; }
+
+.terminal-title {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-right: auto;
+}
+
+.terminal-body {
+  padding: 1.5rem;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.9rem;
+  min-height: 220px;
+}
+
+.log-line {
+  margin-bottom: 0.6rem;
+  display: flex;
+  align-items: center;
+  animation: fadeIn 0.4s ease-out forwards;
+}
+
+.log-time { color: #5f7e97; margin-left: 1rem; }
+
+.badge {
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  margin-left: 1rem;
+}
+
+.badge-ok { background-color: rgba(39, 201, 63, 0.15); color: #27c93f; }
+.badge-warn { background-color: rgba(255, 95, 86, 0.15); color: #ff5f56; }
+.badge-info { background-color: rgba(0, 229, 255, 0.15); color: #00e5ff; }
+
+/* قسم الاتصال والنموذج */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.form-panel {
+  background-color: var(--bg-1);
+  border: 1px solid var(--border-color);
+  padding: 2.5rem;
+  border-radius: 8px;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+  color: var(--text-muted);
+}
+
+.form-group input, .form-group textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background-color: var(--bg-0);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  color: var(--text-main);
+  font-family: var(--font-family);
+  font-size: 0.95rem;
+  transition: border-color 0.3s;
+}
+
+.form-group input:focus, .form-group textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+}
+
+/* الفوتر */
+.footer {
+  text-align: center;
+  padding: 2.5rem 5%;
+  border-top: 1px solid var(--border-color);
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+/* تأثيرات الحركات (Reveal on scroll) */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.reveal.in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateX(-10px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+/* التجاوب مع الجوال */
+@media (max-width: 768px) {
+  .hero h1 { font-size: 2.3rem; }
+  .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
+  .nav-links { display: none; }
+  .nav-toggle { display: block; }
+}
